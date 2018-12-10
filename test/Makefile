@@ -5,36 +5,42 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/12/09 10:05:42 by pguillie          #+#    #+#              #
-#    Updated: 2018/12/10 15:47:11 by pguillie         ###   ########.fr        #
+#    Created: 2018/12/10 14:21:40 by pguillie          #+#    #+#              #
+#    Updated: 2018/12/10 15:35:45 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libfts.a
+NAME = test_libfts
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
 
-AS = nasm
-ASFLAGS = -f$(ARCH)
+LIBFTS := -L../ -lfts
 
-ifeq ($(shell uname), Linux)
-	ARCH := elf64
-else
-	ARCH := macho64
-endif
+SRCDIR := sources/
+INCDIR := includes/
 
-SOURCES := $(addprefix sources/, \
-	ft_bzero.s \
-	ft_strcat.s \
+INCLUDES = $(addprefix $(INCDIR), \
+	libfts.h \
+	tests.h \
 )
 
-OBJECTS = $(SOURCES:%.s=%.o)
+SOURCES = $(addprefix $(SRCDIR), \
+	main.c \
+	test_bzero.c \
+	test_strcat.c \
+)
+
+OBJECTS = $(SOURCES:%.c=%.o)
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	gcc -o $(NAME) $(OBJECTS) $(LIBFTS)
+
+%.o: %.c $(INCLUDES)
+	gcc -c -o $@ $< -I$(INCDIR)
 
 clean:
 	rm -rf $(OBJECTS)
