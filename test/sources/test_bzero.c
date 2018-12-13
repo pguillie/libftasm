@@ -6,7 +6,7 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:48:19 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/10 15:38:12 by pguillie         ###   ########.fr       */
+/*   Updated: 2018/12/11 21:00:04 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	unit_bzero(char *buf, size_t n)
 	return (0);
 }
 
-int		test_bzero(void)
+int			test_bzero(void)
 {
 	char	buf[2048];
 	int		ret;

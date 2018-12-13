@@ -7,6 +7,7 @@ _ft_strcat:
 
 	mov		rax, rdi
 	xor		rcx, rcx
+
 offset:
 	mov		dl, BYTE [rdi]
 	test	dl, dl

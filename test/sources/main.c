@@ -6,17 +6,18 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:44:55 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/10 18:52:32 by pguillie         ###   ########.fr       */
+/*   Updated: 2018/12/13 19:22:48 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdint.h>
 #include "tests.h"
 
-static int	test(char *name, int (*f)(void))
+static int	test(char *name, uint32_t (*f)(void))
 {
-	int	ret;
-	int	i;
+	uint32_t	ret;
+	int			i;
 
 	printf("%s: ", name);
 	if ((ret = f()))
@@ -45,11 +46,20 @@ int 	    main(void)
 	printf("\t== Part 1 ==\n");
 	ret += test("bzero", test_bzero);
 	ret += test("strcat", test_strcat);
-	/* ... */
+	ret += test("isalpha", test_isalpha);
+	ret += test("isdigit", test_isdigit);
+	ret += test("isalnum", test_isalnum);
+	// ret += test("isprint", test_isprint);
+	// ret += test("toupper", test_toupper);
+	// ret += test("tolower", test_tolower);
+	// ret += test("puts", test_puts);
 	printf("\t== Part 2 ==\n");
-	/* ... */
+	// ret += test("strlen", test_strlen);
+	// ret += test("memset", test_memset);
+	// ret += test("memcpy", test_memcpy);
+	// ret += test("strdup", test_strdup);
 	printf("\t== Part 3 ==\n");
-	/* ... */
+	// ret += test("cat", test_cat);
 	if (ret)
 		printf("\e[31;1m%d function%s not working.\e[0m\n",
 			ret, (ret > 1 ? "s are" : " is"));

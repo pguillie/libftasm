@@ -6,7 +6,7 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 15:35:47 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/10 19:11:43 by pguillie         ###   ########.fr       */
+/*   Updated: 2018/12/11 21:00:08 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	unit_strcat(char *dest, const char *src, char *res)
 	return (0);
 }
 
-int		test_strcat(void)
+int			test_strcat(void)
 {
 	char	buf[2048];
 	int		ret;

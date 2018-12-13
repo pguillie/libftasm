@@ -6,7 +6,7 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 10:46:13 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/10 14:55:21 by pguillie         ###   ########.fr       */
+/*   Updated: 2018/12/13 18:00:33 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 void	*ft_bzero(void *s, size_t n);
 char	*ft_strcat(char *dest, const char *src);
+int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);

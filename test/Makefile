@@ -6,7 +6,7 @@
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/10 14:21:40 by pguillie          #+#    #+#              #
-#    Updated: 2018/12/10 15:35:45 by pguillie         ###   ########.fr        #
+#    Updated: 2018/12/13 19:18:24 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ SOURCES = $(addprefix $(SRCDIR), \
 	main.c \
 	test_bzero.c \
 	test_strcat.c \
+	test_isdigit.c \
+	test_isalpha.c \
+	test_isalnum.c \
 )
 
 OBJECTS = $(SOURCES:%.c=%.o)
@@ -36,7 +39,7 @@ OBJECTS = $(SOURCES:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) ../libfts.a
 	gcc -o $(NAME) $(OBJECTS) $(LIBFTS)
 
 %.o: %.c $(INCLUDES)
