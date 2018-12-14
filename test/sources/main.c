@@ -6,12 +6,11 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:44:55 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/13 19:22:48 by pguillie         ###   ########.fr       */
+/*   Updated: 2018/12/14 14:27:24 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdint.h>
 #include "tests.h"
 
 static int	test(char *name, uint32_t (*f)(void))
@@ -49,6 +48,7 @@ int 	    main(void)
 	ret += test("isalpha", test_isalpha);
 	ret += test("isdigit", test_isdigit);
 	ret += test("isalnum", test_isalnum);
+	// ret += test("isascii", test_isprint);
 	// ret += test("isprint", test_isprint);
 	// ret += test("toupper", test_toupper);
 	// ret += test("tolower", test_tolower);

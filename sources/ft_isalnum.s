@@ -1,6 +1,8 @@
 section	.text
+global	ft_isalnum
 global	_ft_isalnum
 
+ft_isalnum:
 _ft_isalnum:
 	push	rbp
 	mov		rbp, rsp

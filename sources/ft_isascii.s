@@ -1,16 +1,16 @@
 section	.text
-global	ft_isdigit
-global	_ft_isdigit
+global	ft_isascii
+global	_ft_isascii
 
-ft_isdigit:
-_ft_isdigit:
+ft_isascii:
+_ft_isascii:
 	push	rbp
 	mov		rbp, rsp
 
 	mov		rax, 0h
-	cmp		rdi, 30h
+	cmp		rdi, 0h
 	jl		return
-	cmp		rdi, 39h
+	cmp		rdi, 7fh
 	jg		return
 	mov		rax, 1h
 

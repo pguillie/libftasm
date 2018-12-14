@@ -1,6 +1,8 @@
 section	.text
+global	ft_strcat
 global	_ft_strcat
 
+ft_strcat:
 _ft_strcat:
 	push	rbp
 	mov		rbp, rsp

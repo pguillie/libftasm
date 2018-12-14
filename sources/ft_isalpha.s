@@ -1,6 +1,8 @@
 section	.text
+global	ft_isalpha
 global	_ft_isalpha
 
+ft_isalpha:
 _ft_isalpha:
 	push	rbp
 	mov		rbp, rsp
