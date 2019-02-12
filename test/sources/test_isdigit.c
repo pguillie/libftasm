@@ -6,17 +6,18 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 20:59:07 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/13 19:16:48 by pguillie         ###   ########.fr       */
+/*   Updated: 2018/12/18 07:30:01 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <ctype.h>
 #include <stdint.h>
 #include "libfts.h"
 
 static int	unit_isdigit(int c)
 {
-	return (!(isdigit(c) == ft_isdigit(c)));
+	return (!(!isdigit(c) == !ft_isdigit(c)));
 }
 
 uint32_t			test_isdigit(void)
@@ -53,7 +54,8 @@ uint32_t			test_isdigit(void)
 	/* test 14 */
 	ret |= (unit_isdigit(42) << 13);
 	/* test 15 */
-	ret |= (unit_isdigit(-2147483648) << 14);
+	printf("EOF: %d\n", EOF);
+	ret |= (unit_isdigit(EOF) << 14);
 	/* test 16 */
 	ret |= (unit_isdigit(256) << 15);
 	/* test 17 */

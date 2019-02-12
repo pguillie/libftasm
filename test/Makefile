@@ -6,7 +6,7 @@
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/10 14:21:40 by pguillie          #+#    #+#              #
-#    Updated: 2018/12/13 19:18:24 by pguillie         ###   ########.fr        #
+#    Updated: 2018/12/18 10:02:44 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ INCDIR := includes/
 
 INCLUDES = $(addprefix $(INCDIR), \
 	libfts.h \
+	ft_ctype.h \
 	tests.h \
 )
 

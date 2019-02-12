@@ -6,7 +6,7 @@
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/09 10:05:42 by pguillie          #+#    #+#              #
-#    Updated: 2018/12/13 19:30:07 by pguillie         ###   ########.fr        #
+#    Updated: 2019/02/09 11:00:36 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,14 @@ else
 endif
 
 SOURCES := $(addprefix sources/, \
+	$(addprefix ctype/, \
+		ft_ctype.s \
+		ft_isalpha.s \
+		ft_isdigit.s \
+		ft_isalnum.s \
+	) \
 	ft_bzero.s \
 	ft_strcat.s \
-	ft_isalpha.s \
-	ft_isdigit.s \
-	ft_isalnum.s \
 )
 
 OBJECTS = $(SOURCES:%.s=%.o)

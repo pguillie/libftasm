@@ -6,7 +6,7 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 20:59:07 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/13 19:16:27 by pguillie         ###   ########.fr       */
+/*   Updated: 2018/12/18 07:10:26 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static int	unit_isalpha(int c)
 {
-	return (!(isalpha(c) == ft_isalpha(c)));
+	return (!(!isalpha(c) == !ft_isalpha(c)));
 }
 
 uint32_t			test_isalpha(void)
@@ -53,20 +53,18 @@ uint32_t			test_isalpha(void)
 	/* test 14 */
 	ret |= (unit_isalpha(42) << 13);
 	/* test 15 */
-	ret |= (unit_isalpha(-2147483648) << 14);
-	/* test 16 */
 	ret |= (unit_isalpha(256) << 15);
-	/* test 17 */
+	/* test 16 */
 	ret |= (unit_isalpha('0') << 16);
-	/* test 18 */
+	/* test 17 */
 	ret |= (unit_isalpha(' ') << 17);
-	/* test 19 */
+	/* test 18 */
 	ret |= (unit_isalpha('@') << 18);
-	/* test 20 */
+	/* test 19 */
 	ret |= (unit_isalpha('[') << 19);
-	/* test 21 */
+	/* test 20 */
 	ret |= (unit_isalpha('`') << 20);
-	/* test 22 */
+	/* test 21 */
 	ret |= (unit_isalpha('{') << 21);
 
 	return (ret);
