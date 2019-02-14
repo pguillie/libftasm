@@ -6,18 +6,12 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 09:22:32 by pguillie          #+#    #+#             */
-/*   Updated: 2019/02/09 18:06:10 by pguillie         ###   ########.fr       */
+/*   Updated: 2019/02/13 22:13:13 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CTYPE_H
 # define FT_CTYPE_H
-
-/*
-** include EOF
-*/
-// EOF not tested
-# include <stdio.h>
 
 /*
 ** public

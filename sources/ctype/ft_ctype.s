@@ -1,14 +1,19 @@
 section	.text
 global	ft_ctype
+extern	ft_isascii
 
 ft_ctype:
 	push	rbp
 	mov	rbp, rsp
-
+	push	rdi
+	call	ft_isascii
+	test	rax, rax
+	je	return
+	pop	rdi
 	lea	rax, [rel ascii]
 	mov	rax, [rax + rdi * 0x2]
 	and	rax, rsi
-
+return:
 	leave
 	ret
 
@@ -139,8 +144,8 @@ ascii:
 	dw 0b000110110100 ;   	x	print|graph|alnum|alpha|lower
 	dw 0b000110110100 ;   	y	print|graph|alnum|alpha|lower
 	dw 0b000110110100 ;   	z	print|graph|alnum|alpha|lower
-	dw 0b000110110100 ;   	{	print|graph|punct
-	dw 0b000110110100 ;   	|	print|graph|punct
-	dw 0b000110110100 ;   	}	print|graph|punct
-	dw 0b000110110100 ;   	~	print|graph|punct
+	dw 0b000111000000 ;   	{	print|graph|punct
+	dw 0b000111000000 ;   	|	print|graph|punct
+	dw 0b000111000000 ;   	}	print|graph|punct
+	dw 0b000111000000 ;   	~	print|graph|punct
 	dw 0b100000000000 ;   	DEL	cntrl
