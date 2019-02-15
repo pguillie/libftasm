@@ -1,4 +1,5 @@
 section	.text
+
 global	ft_strcat
 
 ft_strcat:

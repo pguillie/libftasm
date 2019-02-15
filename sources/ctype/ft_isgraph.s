@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_isgraph
+
 extern	ft_ctype
 
 ft_isgraph:

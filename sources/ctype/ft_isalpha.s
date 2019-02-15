@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_isalpha
+
 extern	ft_ctype
 
 ft_isalpha:

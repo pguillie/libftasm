@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_isdigit
+
 extern	ft_ctype
 
 ft_isdigit:

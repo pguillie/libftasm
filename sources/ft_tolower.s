@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_tolower
+
 extern	ft_isupper
 
 ft_tolower:
@@ -7,10 +9,11 @@ ft_tolower:
 	mov	rbp, rsp
 	push	rdi
 	call	ft_isupper
+	pop	rdi
 	test	rax, rax
-	je	return
-	pop	rax
-	or	rax, 0x20
+	jne	return
+	or	rdi, 0x20
 return:
+	mov	rax, rdi
 	leave
 	ret

@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_islower
+
 extern	ft_ctype
 
 ft_islower:

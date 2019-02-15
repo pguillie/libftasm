@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_ctype
+
 extern	ft_isascii
 
 ft_ctype:
@@ -18,6 +20,7 @@ return:
 	ret
 
 section	.rodata
+
 ascii:
 ; bit position:
 ; cntrl space blank print graph punct alnum alpha upper lower digit xdigit

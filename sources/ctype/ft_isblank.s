@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_isblank
+
 extern	ft_ctype
 
 ft_isblank:

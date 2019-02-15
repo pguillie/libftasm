@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_isalnum
+
 extern	ft_ctype
 
 ft_isalnum:

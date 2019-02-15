@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_iscntrl
+
 extern	ft_ctype
 
 ft_iscntrl:

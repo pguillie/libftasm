@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_isprint
+
 extern	ft_ctype
 
 ft_isprint:

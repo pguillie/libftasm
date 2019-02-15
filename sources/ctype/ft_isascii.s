@@ -1,4 +1,5 @@
 section	.text
+
 global	ft_isascii
 
 ft_isascii:

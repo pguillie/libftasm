@@ -1,4 +1,5 @@
 section	.text
+
 global	ft_puts
 
 ft_puts:
@@ -45,6 +46,6 @@ strlen_return:
 	ret
 
 section	.rodata
-null:	db "(null)", 0xa
-.len:	equ $ - null
-nl:	db 0xa
+	null	db "(null)", 0xa
+	.len	equ $ - null
+	nl	db 0xa

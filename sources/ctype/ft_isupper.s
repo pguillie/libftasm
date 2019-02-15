@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_isupper
+
 extern	ft_ctype
 
 ft_isupper:

@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_isxdigit
+
 extern	ft_ctype
 
 ft_isxdigit:

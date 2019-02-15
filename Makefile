@@ -6,7 +6,7 @@
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/09 10:05:42 by pguillie          #+#    #+#              #
-#    Updated: 2019/02/14 23:32:09 by pguillie         ###   ########.fr        #
+#    Updated: 2019/02/15 17:44:46 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,10 +44,12 @@ SOURCES := $(addprefix sources/, \
 		ft_isxdigit.s \
 	) \
 	ft_bzero.s \
+	ft_cat.s \
 	ft_memcpy.s \
 	ft_memset.s \
 	ft_puts.s \
 	ft_strcat.s \
+	ft_strdup.s \
 	ft_strlen.s \
 	ft_tolower.s \
 	ft_toupper.s \

@@ -1,5 +1,7 @@
 section	.text
+
 global	ft_ispunct
+
 extern	ft_ctype
 
 ft_ispunct:
