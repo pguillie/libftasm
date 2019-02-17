@@ -13,24 +13,61 @@
 #ifndef TESTS_H
 # define TESTS_H
 
-#include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
-uint32_t	test_bzero(void);
-uint32_t	test_strcat(void);
-uint32_t	test_isalpha(void);
-uint32_t	test_isdigit(void);
-uint32_t	test_isalnum(void);
-uint32_t	test_isascii(void);
-uint32_t	test_isprint(void);
-uint32_t	test_toupper(void);
-uint32_t	test_tolower(void);
-uint32_t	test_puts(void);
+#include "libfts.h"
 
-uint32_t	test_strlen(void);
-uint32_t	test_memset(void);
-uint32_t	test_memcpy(void);
-uint32_t	test_strdup(void);
+/*
+ * Mandatory
+ */
 
-uint32_t	test_cat(void);
+/* part 1 */
 
-#endif
+int test_bzero(int *nb);
+int test_strcat(int *nb);
+int test_isalpha(int *nb);
+int test_isdigit(int *nb);
+int test_isalnum(int *nb);
+int test_isascii(int *nb);
+int test_isprint(int *nb);
+int test_toupper(int *nb);
+int test_tolower(int *nb);
+int test_puts(int *nb);
+
+/* part 2 */
+
+int test_strlen(int *nb);
+int test_memset(int *nb);
+int test_memcpy(int *nb);
+int test_strdup(int *nb);
+
+/* part 3  */
+
+int test_cat(int *nb);
+
+/*
+ * Bonus
+ */
+
+int test_isblank(int *nb);
+int test_iscntrl(int *nb);
+int test_isgraph(int *nb);
+int test_islower(int *nb);
+int test_ispunct(int *nb);
+int test_isspace(int *nb);
+int test_isupper(int *nb);
+int test_isxdigit(int *nb);
+
+/*
+ * Private
+ */
+
+# define CTYPE_TEST_MIN 0 //-512 //ko
+# define CTYPE_TEST_MAX 256 //1024 //ko
+
+int test_ctype(int (*real)(int), int (*mine)(int), int *nb);
+
+#endif /* TESTS_H */

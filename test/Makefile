@@ -10,14 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test_libfts
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+NAME	= test_libfts
+CC	= gcc
+CFLAGS	= -Wall -Werror -Wextra -I $(INCDIR)
 
-LIBFTS := -L../ -lfts
+LIBFTS := ../libfts.a
 
-SRCDIR := sources/
 INCDIR := includes/
+SRCDIR := sources/
 
 INCLUDES = $(addprefix $(INCDIR), \
 	libfts.h \
@@ -28,10 +28,13 @@ INCLUDES = $(addprefix $(INCDIR), \
 SOURCES = $(addprefix $(SRCDIR), \
 	main.c \
 	test_bzero.c \
-	test_strcat.c \
-	test_isdigit.c \
-	test_isalpha.c \
+	test_ctype.c \
 	test_isalnum.c \
+	test_isalpha.c \
+	test_isascii.c \
+	test_isdigit.c \
+	test_isprint.c \
+	test_strcat.c \
 )
 
 OBJECTS = $(SOURCES:%.c=%.o)
@@ -40,11 +43,13 @@ OBJECTS = $(SOURCES:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) ../libfts.a
+$(NAME): $(OBJECTS) $(LIBFTS)
 	gcc -o $(NAME) $(OBJECTS) $(LIBFTS)
 
-%.o: %.c $(INCLUDES)
-	gcc -c -o $@ $< -I$(INCDIR)
+$(LIBFTS):
+	make -C $(dir $(LIBFTS))
+
+$(OBJECTS): $(INCLUDES) Makefile
 
 clean:
 	rm -rf $(OBJECTS)

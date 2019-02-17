@@ -1,60 +1,30 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   test_bzero.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/10 13:48:19 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/11 21:00:04 by pguillie         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "tests.h"
 
-#include <string.h>
-#include "libfts.h"
-
-static int	unit_bzero(char *buf, size_t n)
+static int unit_bzero(int size)
 {
-	char	*ptr;
+	char buf[4096];
 
-	memset(buf, 42, n);
-	ptr = ft_bzero(buf, n);
-	if (ptr != buf)
-		return (1);
-	for (size_t i = 0; i < n; i++)
+	memset(buf, '*', size);
+	ft_bzero(buf, size);
+	for (int i = 0; i < size; i++) {
 		if (buf[i])
-			return (1);
-	return (0);
+			return (0);
+	}
+	return (1);
 }
 
-int			test_bzero(void)
+int test_bzero(int *nb)
 {
-	char	buf[2048];
-	int		ret;
-	
-	ret = 0;
-	/* test 1 */
-	ret |= unit_bzero(buf, 0);
-	/* test 2 */
-	ret |= (unit_bzero(buf, 1) << 1);
-	/* test 3 */
-	ret |= (unit_bzero(buf, 5) << 2);
-	/* test 4 */
-	ret |= (unit_bzero(buf, 8) << 3);
-	/* test 5 */
-	ret |= (unit_bzero(buf, 9) << 4);
-	/* test 6 */
-	ret |= (unit_bzero(buf, 20) << 5);
-	/* test 7 */
-	ret |= (unit_bzero(buf, 42) << 6);
-	/* test 8 */
-	ret |= (unit_bzero(buf, 1000) << 7);
-	/* test 9 */
-	ret |= (unit_bzero(buf, 1024) << 8);
-	/* test 10 */
-	ret |= (unit_bzero(buf, 1234) << 9);
-	/* test 11 */
-	ret |= (unit_bzero(buf, 2047) << 10);
+	static int size[] = {0, 1, 8, 10, 42, 64, 100, 129, 1000, 1023, 2048,
+			     3000};
+	int failed = 0;
 
-	return (ret);
+	*nb = sizeof(size) / sizeof(size[0]);
+	for (int i = 0; i < *nb; i++) {
+		if (unit_bzero(size[i]) == 0) {
+			printf("\nfailed test %d: size = %d", i, size[i]);
+			failed++;
+		}
+	}
+	return (failed);
 }

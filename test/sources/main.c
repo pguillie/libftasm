@@ -1,69 +1,49 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/10 13:44:55 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/14 14:27:24 by pguillie         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <stdio.h>
 #include "tests.h"
 
-static int	test(char *name, uint32_t (*f)(void))
-{
-	uint32_t	ret;
-	int			i;
+struct function {
+	const char *name;
+	int (*ptr)(int *);
+};
 
-	printf("%s: ", name);
-	if ((ret = f()))
-	{
-		printf("\e[31;1mKO\e[0m ( failed tests: ");
-		i = 1;
-		while (ret)
-		{
-			if (ret & 1)
-				printf("%d ", i);
-			i++;
-			ret >>= 1;
-		}
-		printf(")\n");
-		return (1);
-	}
-	printf("\e[32;1mOK\e[0m\n");
-	return (0);
+struct function *get_next_function(void)
+{
+	static size_t i = 0;
+	static struct function array[] = {
+		{ "ft_bzero", test_bzero },
+		{ "ft_strcat", test_strcat },
+		{ "ft_isalpha", test_isalpha },
+		{ "ft_isdigit", test_isdigit },
+		{ "ft_isalnum", test_isalnum },
+		{ "ft_isascii", test_isascii },
+		{ "ft_isprint", test_isprint }
+	};
+
+	if (i < sizeof(array) / sizeof(array[0]))
+		return (array + i++);
+	return (NULL);
 }
 
-int 	    main(void)
+int main(void)
 {
-	int		ret;
+	struct function *f;
+	int failure = 0;
 
-	ret = 0;
-	printf("\t== Part 1 ==\n");
-	ret += test("bzero", test_bzero);
-	ret += test("strcat", test_strcat);
-	ret += test("isalpha", test_isalpha);
-	ret += test("isdigit", test_isdigit);
-	ret += test("isalnum", test_isalnum);
-	// ret += test("isascii", test_isprint);
-	// ret += test("isprint", test_isprint);
-	// ret += test("toupper", test_toupper);
-	// ret += test("tolower", test_tolower);
-	// ret += test("puts", test_puts);
-	printf("\t== Part 2 ==\n");
-	// ret += test("strlen", test_strlen);
-	// ret += test("memset", test_memset);
-	// ret += test("memcpy", test_memcpy);
-	// ret += test("strdup", test_strdup);
-	printf("\t== Part 3 ==\n");
-	// ret += test("cat", test_cat);
-	if (ret)
-		printf("\e[31;1m%d function%s not working.\e[0m\n",
-			ret, (ret > 1 ? "s are" : " is"));
-	else
-		printf("\e[32;1mAll functions passed the tests!\e[0m\n");
-	return (ret);
+	while ((f = get_next_function())) {
+		printf("\e[1m- %s:\e[0m ", f->name);
+		int nb, fail;
+		fail = f->ptr(&nb);
+		if (fail) {
+			printf("\n\e[31m[%d ko]\e[0m (%d tests)\n", fail, nb);
+			failure++;
+		} else {
+			printf("\e[32m[OK]\e[0m (%d tests)\n", nb);
+		}
+	}
+	if (failure) {
+		printf("\e[31;1m>>> %d failed function%c <<<\e[0m\n", failure,
+		       (failure > 1 ? 's' : 0));
+	} else {
+		printf("\e[32;1m>>> All tests passed! <<<\n\e[0m");
+	}
+	return (failure);
 }
