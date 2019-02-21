@@ -1,11 +1,20 @@
-section	.text
+;******************************************************************************;
+;                                                                              ;
+;                                                         :::      ::::::::    ;
+;    ft_strdup.s                                        :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2019/02/21 18:48:53 by pguillie          #+#    #+#              ;
+;    Updated: 2019/02/21 18:49:35 by pguillie         ###   ########.fr        ;
+;                                                                              ;
+;******************************************************************************;
 
-global	ft_strdup
+global ft_strdup
+extern malloc
+extern ft_strlen, ft_memcpy
 
-extern	_malloc
-extern	ft_strlen
-extern	ft_memcpy
-
+section .text
 ft_strdup:
 	push	rbp
 	mov	rbp, rsp
@@ -13,7 +22,7 @@ ft_strdup:
 	call	ft_strlen
 	mov	rdi, rax
 	push	rdi
-	call	_malloc
+	call	malloc
 	test	rax, rax
 	je	return
 	pop	rdx

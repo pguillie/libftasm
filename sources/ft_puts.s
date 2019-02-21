@@ -1,7 +1,19 @@
-section	.text
+;******************************************************************************;
+;                                                                              ;
+;                                                         :::      ::::::::    ;
+;    ft_puts.s                                          :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2019/02/21 18:42:35 by pguillie          #+#    #+#              ;
+;    Updated: 2019/02/21 19:24:05 by pguillie         ###   ########.fr        ;
+;                                                                              ;
+;******************************************************************************;
 
-global	ft_puts
-
+global ft_puts
+extern ft_strlen
+	
+section .text
 ft_puts:
 	push	rbp
 	mov	rbp, rsp
@@ -30,22 +42,9 @@ null_arg:
 	leave
 	ret
 
-; part 2
-ft_strlen:
-	push	rbp
-	mov	rbp, rsp
-	xor	rax, rax
-not_null:
-	mov	dl, BYTE [rdi + rax]
-	test	dl, dl
-	je	strlen_return
-	inc	rax
-	jmp	not_null
-strlen_return:
-	leave
-	ret
-
 section	.rodata
-	null	db "(null)", 0xa
-	.len	equ $ - null
-	nl	db 0xa
+null:
+	db "(null)", 0xa
+.len: equ $ - null
+nl:
+	db 0xa

@@ -15,8 +15,10 @@ static int unit_bzero(int size)
 
 int test_bzero(int *nb)
 {
-	static int size[] = {0, 1, 8, 10, 42, 64, 100, 129, 1000, 1023, 2048,
-			     3000};
+	static int size[] = {
+		0, 1, 8, 10, 245, 42, 64, 100, 129, 1000, 76, 928, 1023, 2048,
+		3000, 666
+	};
 	int failed = 0;
 
 	*nb = sizeof(size) / sizeof(size[0]);

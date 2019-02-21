@@ -1,7 +1,18 @@
-section	.text
+;******************************************************************************;
+;                                                                              ;
+;                                                         :::      ::::::::    ;
+;    ft_strcat.s                                        :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2019/02/21 18:39:04 by pguillie          #+#    #+#              ;
+;    Updated: 2019/02/21 18:50:02 by pguillie         ###   ########.fr        ;
+;                                                                              ;
+;******************************************************************************;
 
-global	ft_strcat
+global ft_strcat
 
+section .text
 ft_strcat:
 	push	rbp
 	mov	rbp, rsp

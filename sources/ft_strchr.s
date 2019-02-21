@@ -1,9 +1,19 @@
-section .text
+;******************************************************************************;
+;                                                                              ;
+;                                                         :::      ::::::::    ;
+;    ft_strchr.s                                        :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2019/02/21 18:57:16 by pguillie          #+#    #+#              ;
+;    Updated: 2019/02/21 18:57:20 by pguillie         ###   ########.fr        ;
+;                                                                              ;
+;******************************************************************************;
 
 global ft_strchr
-
 extern ft_strlen
 
+section .text
 ft_strchr:
 	push	rbp
 	mov	rbp, rsp

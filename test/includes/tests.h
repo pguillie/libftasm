@@ -6,19 +6,20 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:49:00 by pguillie          #+#    #+#             */
-/*   Updated: 2018/12/14 11:13:01 by pguillie         ###   ########.fr       */
+/*   Updated: 2019/02/21 20:17:28 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTS_H
 # define TESTS_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
+# include <ctype.h>
 
-#include "libfts.h"
+# include "libfts.h"
 
 /*
  * Mandatory
@@ -65,8 +66,8 @@ int test_isxdigit(int *nb);
  * Private
  */
 
-# define CTYPE_TEST_MIN 0 //-512 //ko
-# define CTYPE_TEST_MAX 256 //1024 //ko
+# define CTYPE_TEST_MIN -1024
+# define CTYPE_TEST_MAX 2048
 
 int test_ctype(int (*real)(int), int (*mine)(int), int *nb);
 

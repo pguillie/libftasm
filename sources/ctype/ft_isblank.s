@@ -1,9 +1,19 @@
-section	.text
+;******************************************************************************;
+;                                                                              ;
+;                                                         :::      ::::::::    ;
+;    ft_isblank.s                                       :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2019/02/21 18:53:18 by pguillie          #+#    #+#              ;
+;    Updated: 2019/02/21 18:53:26 by pguillie         ###   ########.fr        ;
+;                                                                              ;
+;******************************************************************************;
 
-global	ft_isblank
+global ft_isblank
+extern ft_ctype
 
-extern	ft_ctype
-
+section .text
 ft_isblank:
 	push	rbp
 	mov	rbp, rsp

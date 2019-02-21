@@ -6,19 +6,19 @@
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/09 10:05:42 by pguillie          #+#    #+#              #
-#    Updated: 2019/02/15 17:44:46 by pguillie         ###   ########.fr        #
+#    Updated: 2019/02/21 18:28:12 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libfts.a
 
 AS = nasm
-ASFLAGS = -f$(ARCH)
+ASFLAGS = $(ARCH)
 
 ifeq ($(shell uname), Linux)
-	ARCH := elf64
+	ARCH := -felf64
 else
-	ARCH := macho64
+	ARCH := -fmacho64 --prefix _
 endif
 
 INCLUDES = $(addprefix includes/, \

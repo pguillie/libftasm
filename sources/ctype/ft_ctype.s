@@ -1,9 +1,19 @@
-section	.text
+;******************************************************************************;
+;                                                                              ;
+;                                                         :::      ::::::::    ;
+;    ft_ctype.s                                         :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2019/02/21 18:51:23 by pguillie          #+#    #+#              ;
+;    Updated: 2019/02/21 18:51:44 by pguillie         ###   ########.fr        ;
+;                                                                              ;
+;******************************************************************************;
 
-global	ft_ctype
+global ft_ctype
+extern ft_isascii
 
-extern	ft_isascii
-
+section .text
 ft_ctype:
 	push	rbp
 	mov	rbp, rsp
@@ -19,8 +29,7 @@ return:
 	leave
 	ret
 
-section	.rodata
-
+section .rodata
 ascii:
 ; bit position:
 ; cntrl space blank print graph punct alnum alpha upper lower digit xdigit

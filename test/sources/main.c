@@ -15,7 +15,10 @@ struct function *get_next_function(void)
 		{ "ft_isdigit", test_isdigit },
 		{ "ft_isalnum", test_isalnum },
 		{ "ft_isascii", test_isascii },
-		{ "ft_isprint", test_isprint }
+		{ "ft_isprint", test_isprint },
+		{ "ft_toupper", test_toupper },
+		{ "ft_tolower", test_tolower },
+		{ "ft_puts", test_puts }
 	};
 
 	if (i < sizeof(array) / sizeof(array[0]))
