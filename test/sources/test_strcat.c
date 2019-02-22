@@ -23,7 +23,8 @@ int test_strcat(int *nb)
 		for (j = 0; j < sizeof(b) / sizeof(b[0]); j++) {
 			if (unit_test(a[i], b[j]) == 0) {
 				printf("\nfailed test %zu: \"%s\"+\"%s\"",
-				       3 * i + j, a[i], b[j]);
+				       i * sizeof(b) / sizeof(b[0])+ j,
+				       a[i], b[j]);
 				failed++;
 			}
 		}

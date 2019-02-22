@@ -1,6 +1,6 @@
 #include "tests.h"
 
-static int unit_bzero(int size)
+static int unit_test(int size)
 {
 	char buf[4096];
 
@@ -23,7 +23,7 @@ int test_bzero(int *nb)
 
 	*nb = sizeof(size) / sizeof(size[0]);
 	for (int i = 0; i < *nb; i++) {
-		if (unit_bzero(size[i]) == 0) {
+		if (unit_test(size[i]) == 0) {
 			printf("\nfailed test %d: size = %d", i, size[i]);
 			failed++;
 		}

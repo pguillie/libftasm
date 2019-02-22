@@ -18,11 +18,24 @@ struct function *get_next_function(void)
 		{ "ft_isprint", test_isprint },
 		{ "ft_toupper", test_toupper },
 		{ "ft_tolower", test_tolower },
-		{ "ft_puts", test_puts }
+		{ "ft_puts", test_puts },
+		{ "ft_strlen", test_strlen },
+		{ "ft_memset", test_memset },
+		{ "ft_memcpy", test_memcpy },
+		{ "ft_strdup", test_strdup }
 	};
 
-	if (i < sizeof(array) / sizeof(array[0]))
+	if (i < sizeof(array) / sizeof(array[0])) {
+		if (i == 0)
+			printf("\e[1m--{ PART 1 }--\e[0m\n");
+		if (i == 10)
+			printf("\e[1m--{ PART 2 }--\e[0m\n");
+		if (i == 14)
+			printf("\e[1m--{ PART 3 }--\e[0m\n");
+		if (i == 15)
+			printf("\e[1m--{ BONUSES }--\e[0m\n");
 		return (array + i++);
+	}
 	return (NULL);
 }
 
@@ -39,7 +52,7 @@ int main(void)
 			printf("\n\e[31m[%d ko]\e[0m (%d tests)\n", fail, nb);
 			failure++;
 		} else {
-			printf("\e[32m[OK]\e[0m (%d tests)\n", nb);
+			printf("\t\e[32m[OK]\e[0m (%d tests)\n", nb);
 		}
 	}
 	if (failure) {
