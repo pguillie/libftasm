@@ -6,7 +6,7 @@
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/10 14:21:40 by pguillie          #+#    #+#              #
-#    Updated: 2019/02/22 20:29:02 by pguillie         ###   ########.fr        #
+#    Updated: 2019/02/23 13:17:33 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ INCLUDES = $(addprefix $(INCDIR), \
 SOURCES = $(addprefix $(SRCDIR), \
 	main.c \
 	test_bzero.c \
+	test_cat.c \
 	test_ctype.c \
 	test_isalnum.c \
 	test_isalpha.c \

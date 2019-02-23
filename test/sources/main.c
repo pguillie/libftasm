@@ -22,7 +22,8 @@ struct function *get_next_function(void)
 		{ "ft_strlen", test_strlen },
 		{ "ft_memset", test_memset },
 		{ "ft_memcpy", test_memcpy },
-		{ "ft_strdup", test_strdup }
+		{ "ft_strdup", test_strdup },
+		{ "ft_cat", test_cat }
 	};
 
 	if (i < sizeof(array) / sizeof(array[0])) {

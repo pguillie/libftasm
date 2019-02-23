@@ -4,6 +4,7 @@ static int unit_test(char *str, int fd)
 {
 	char buf[1024];
 	size_t len = strlen(str);
+
 	ft_puts(str);
 	read(fd, buf, len + 1);
 	if (strncmp(buf, str, len + 1) != '\n')
@@ -33,6 +34,8 @@ int test_puts(int *nb)
 			dup2(fildes[1], 1);
 		}
 	}
+	close(fildes[0]);
+	close(fildes[1]);
 	dup2(stdout, 1);
 	return (failed);
 }

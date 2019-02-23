@@ -6,7 +6,7 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:49:00 by pguillie          #+#    #+#             */
-/*   Updated: 2019/02/21 20:17:28 by pguillie         ###   ########.fr       */
+/*   Updated: 2019/02/23 14:26:49 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <ctype.h>
+# include <fcntl.h>
 
 # include "libfts.h"
 
@@ -68,6 +69,9 @@ int test_isxdigit(int *nb);
 
 # define CTYPE_TEST_MIN -1024
 # define CTYPE_TEST_MAX 2048
+
+# define CAT_OUT "ft_cat_out"
+# define CAT_DIF "ft_cat_dif"
 
 int test_ctype(int (*real)(int), int (*mine)(int), int *nb);
 
