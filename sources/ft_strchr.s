@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:57:16 by pguillie          #+#    #+#              ;
-;    Updated: 2019/02/21 18:57:20 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/02/23 19:06:46 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -23,15 +23,18 @@ ft_strchr:
 	mov	rcx, rax
 	pop	rax
 	pop	rdi
+	test	rcx, rcx
+	je	endofstr
 	repne scasb
-	; following is wrong
+	jne	endofstr
 	dec	rdi
-	cmp	dl, al
-	jne	found
-	xor	rax, rax
+success:
+	mov	rax, rdi
 	leave
 	ret
-found:
-	mov	rax, rdi
+endofstr:
+	cmp	al, 0x0
+	je	success
+	xor	rax, rax
 	leave
 	ret

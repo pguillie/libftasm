@@ -23,7 +23,16 @@ struct function *get_next_function(void)
 		{ "ft_memset", test_memset },
 		{ "ft_memcpy", test_memcpy },
 		{ "ft_strdup", test_strdup },
-		{ "ft_cat", test_cat }
+		{ "ft_cat", test_cat },
+		{ "ft_isblank", test_isblank },
+		{ "ft_iscntrl", test_iscntrl },
+		{ "ft_isgraph", test_isgraph },
+		{ "ft_islower", test_islower },
+		{ "ft_ispunct", test_ispunct },
+		{ "ft_isspace", test_isspace },
+		{ "ft_isupper", test_isupper },
+		{ "ft_isxdigit", test_isxdigit },
+		{ "ft_strchr", test_strchr }
 	};
 
 	if (i < sizeof(array) / sizeof(array[0])) {

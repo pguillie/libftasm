@@ -10,7 +10,7 @@ static int unit_test(char *str)
 int test_strlen(int *nb)
 {
 	static char *str[] = {
-		"hello worl", "", "foobarbaz", "12345678", "1234567",
+		"hello world", "", "foobarbaz", "12345678", "1234567",
 		"123456789", "qwertyuiopasdfgjlzxcvbnm",
 		"dslh ads l3;ku68459y9uwqio fsaf h;oiuwr qwro  fwtyturwe56 tsad"
 		"asfdgrgjiu1 2y23405 sjhf alsdkfh hph fq398y osladfjk lkajsdf",
