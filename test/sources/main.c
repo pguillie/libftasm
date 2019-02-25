@@ -32,7 +32,8 @@ struct function *get_next_function(void)
 		{ "ft_isspace", test_isspace },
 		{ "ft_isupper", test_isupper },
 		{ "ft_isxdigit", test_isxdigit },
-		{ "ft_strchr", test_strchr }
+		{ "ft_strchr", test_strchr },
+		{ "ft_memchr", test_memchr }
 	};
 
 	if (i < sizeof(array) / sizeof(array[0])) {

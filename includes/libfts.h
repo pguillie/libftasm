@@ -6,7 +6,7 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 10:46:13 by pguillie          #+#    #+#             */
-/*   Updated: 2019/02/23 19:17:17 by pguillie         ###   ########.fr       */
+/*   Updated: 2019/02/25 14:57:21 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char *ft_strdup(const char *s);
 void ft_cat(int fd);
 
 char *ft_strchr(const char *s, int c);
-void *ft_memchr(const void *s, int c, size_t n);//
+void *ft_memchr(const void *s, int c, size_t n);
 
 #endif
