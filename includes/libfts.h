@@ -6,7 +6,7 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 10:46:13 by pguillie          #+#    #+#             */
-/*   Updated: 2019/02/25 14:57:21 by pguillie         ###   ########.fr       */
+/*   Updated: 2019/03/01 15:26:48 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void ft_cat(int fd);
 
 char *ft_strchr(const char *s, int c);
 void *ft_memchr(const void *s, int c, size_t n);
+int ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

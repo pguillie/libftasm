@@ -6,7 +6,7 @@
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/10 14:21:40 by pguillie          #+#    #+#              #
-#    Updated: 2019/02/25 14:34:38 by pguillie         ###   ########.fr        #
+#    Updated: 2019/03/01 18:57:52 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SOURCES = $(addprefix $(SRCDIR), \
 	test_isupper.c \
 	test_isxdigit.c \
 	test_memchr.c \
+	test_memcmp.c \
 	test_memcpy.c \
 	test_memset.c \
 	test_puts.c \

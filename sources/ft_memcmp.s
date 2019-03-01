@@ -1,30 +1,31 @@
 ;******************************************************************************;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_memchr.s                                        :+:      :+:    :+:    ;
+;    ft_memcmp.s                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
-;    Created: 2019/02/25 14:05:22 by pguillie          #+#    #+#              ;
-;    Updated: 2019/03/01 15:05:07 by pguillie         ###   ########.fr        ;
+;    Created: 2019/03/01 15:07:32 by pguillie          #+#    #+#              ;
+;    Updated: 2019/03/01 16:38:28 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
-global ft_memchr
+global ft_memcmp
 
 section .text
-ft_memchr:
+ft_memcmp:
 	push	rbp
 	mov	rbp, rsp
 	mov	rcx, rdx
-	mov	rax, rsi
-	repne scasb
-	jz	success
 	xor	rax, rax
-	leave
-	ret
-success:
-	dec	rdi
-	mov	rax, rdi
+	repz cmpsb
+	jz	return
+	xor	rdx, rdx
+	mov	dl, byte [rdi - 1]
+	xor	rcx, rcx
+	mov	cl, byte [rsi - 1]
+	mov	rax, rdx
+	sub	rax, rcx
+return:
 	leave
 	ret

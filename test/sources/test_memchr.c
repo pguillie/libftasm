@@ -8,13 +8,13 @@ static int unit_test(const void *s, int c, size_t n)
 int test_memchr(int *nb)
 {
 	static void *str[] = {
+		"",
 		"hello world",
 		"!@#$%^&*()1234567890QWERTYUIOPqweuiopASDFGHJKLashjkl"
 		"ZXCVBNMzxcvbnm",
 	};
 	int arr[] = {
-		0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 100, 2048, 21, 42, 84,
-		1024, 65, 'q', 'z'
+		0, 1, 2, 8, 9, 10, 100, 2048, 21, 42, 84, 1024, 65, 'q', 'z'
 	};
 	static int chr[] = {
 		0, 42, 'A', -1, 1000, 'o', 'q', '!'
