@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/25 14:05:22 by pguillie          #+#    #+#              ;
-;    Updated: 2019/03/01 15:05:07 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/03/02 21:15:39 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -18,7 +18,8 @@ ft_memchr:
 	mov	rbp, rsp
 	mov	rcx, rdx
 	mov	rax, rsi
-	repne scasb
+	repne
+	scasb
 	jz	success
 	xor	rax, rax
 	leave

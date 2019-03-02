@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:38:38 by pguillie          #+#    #+#              ;
-;    Updated: 2019/02/21 18:41:41 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/03/02 20:37:42 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -22,13 +22,13 @@ small:
 	cmp	rcx, rsi
 	jle	large
 	dec	rcx
-	mov	BYTE [rdi + rcx], 0x0
+	mov	byte [rdi + rcx], 0x0
 	jmp	small
 large:
 	test	rcx, rcx
 	je	return
 	sub	rcx, 0x8
-	mov	QWORD [rdi + rcx], 0x0
+	mov	qword [rdi + rcx], 0x0
 	jmp	large
 return:
 	mov	rax, rdi
