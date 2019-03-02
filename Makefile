@@ -6,7 +6,7 @@
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/09 10:05:42 by pguillie          #+#    #+#              #
-#    Updated: 2019/03/01 15:26:16 by pguillie         ###   ########.fr        #
+#    Updated: 2019/03/02 18:38:40 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,9 +49,11 @@ SOURCES := $(addprefix sources/, \
 	ft_memcmp.s \
 	ft_memcpy.s \
 	ft_memset.s \
+	ft_putchar.s \
 	ft_puts.s \
 	ft_strcat.s \
 	ft_strchr.s \
+	ft_strcmp.s \
 	ft_strdup.s \
 	ft_strlen.s \
 	ft_tolower.s \

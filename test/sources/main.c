@@ -34,7 +34,9 @@ struct function *get_next_function(void)
 		{ "ft_isxdigit", test_isxdigit },
 		{ "ft_memchr", test_memchr },
 		{ "ft_memcmp", test_memcmp },
-		{ "ft_strchr", test_strchr }
+		{ "ft_strchr", test_strchr },
+		{ "ft_strcmp", test_strcmp },
+		{ "ft_putchar", test_putchar }
 	};
 
 	if (i < sizeof(array) / sizeof(array[0])) {

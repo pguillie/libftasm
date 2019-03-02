@@ -6,7 +6,7 @@
 /*   By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:49:00 by pguillie          #+#    #+#             */
-/*   Updated: 2019/03/01 20:01:52 by pguillie         ###   ########.fr       */
+/*   Updated: 2019/03/02 18:47:03 by pguillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int test_memchr(int *nb);
 int test_memcmp(int *nb);
 int test_strchr(int *nb);
 int test_strcmp(int *nb);
+int test_putchar(int *nb);
 
 /*
  * Private
