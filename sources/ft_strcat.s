@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:39:04 by pguillie          #+#    #+#              ;
-;    Updated: 2019/02/21 18:50:02 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/03/04 15:29:02 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -19,16 +19,16 @@ ft_strcat:
 	mov	rax, rdi
 	xor	rcx, rcx
 offset:
-	mov	dl, BYTE [rdi]
+	mov	dl, byte [rdi]
 	test	dl, dl
-	je	copy
+	jz	copy
 	inc	rdi
 	jmp	offset
 copy:
-	mov	dl, BYTE [rsi + rcx]
-	mov	BYTE [rdi], dl
+	mov	dl, byte [rsi + rcx]
+	mov	byte [rdi], dl
 	test	dl, dl
-	je	return
+	jz	return
 	inc	rdi
 	inc	rcx
 	jmp	copy

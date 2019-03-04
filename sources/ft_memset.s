@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:42:12 by pguillie          #+#    #+#              ;
-;    Updated: 2019/02/21 18:42:59 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/03/04 15:00:05 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -19,7 +19,8 @@ ft_memset:
 	push	rdi
 	mov	rcx, rdx
 	mov	rax, rsi
-	rep stosb
+	rep
+	stosb
 	pop	rax
 	leave
 	ret

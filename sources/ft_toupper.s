@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:51:05 by pguillie          #+#    #+#              ;
-;    Updated: 2019/02/21 20:00:28 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/03/04 15:34:30 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -21,7 +21,7 @@ ft_toupper:
 	call	ft_islower
 	pop	rdi
 	test	rax, rax
-	je	return
+	jz	return
 	mov	rax, 0x20
 	not	rax
 	and	rdi, rax

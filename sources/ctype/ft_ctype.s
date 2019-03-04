@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:51:23 by pguillie          #+#    #+#              ;
-;    Updated: 2019/02/21 18:51:44 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/03/04 15:34:50 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -20,7 +20,7 @@ ft_ctype:
 	push	rdi
 	call	ft_isascii
 	test	rax, rax
-	je	return
+	jz	return
 	pop	rdi
 	lea	rax, [rel ascii]
 	mov	rax, [rax + rdi * 0x2]

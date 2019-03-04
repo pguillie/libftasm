@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:50:10 by pguillie          #+#    #+#              ;
-;    Updated: 2019/02/21 18:50:18 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/03/04 15:33:12 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -19,7 +19,8 @@ ft_strlen:
 	push	rdi
 	xor	al, al
 	mov	rcx, -0x1
-	repne scasb
+	repne
+	scasb
 	dec	rdi
 	mov	rax, rdi
 	pop	rdi

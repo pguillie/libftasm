@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:52:59 by pguillie          #+#    #+#              ;
-;    Updated: 2019/02/21 18:53:12 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/03/04 15:37:21 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -20,6 +20,6 @@ ft_isascii:
 	and	rdi, rax
 	xor	rax, rax
 	test	rdi, rdi
-	sete	al
+	setz	al
 	leave
 	ret

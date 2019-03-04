@@ -6,7 +6,7 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:57:16 by pguillie          #+#    #+#              ;
-;    Updated: 2019/03/01 15:02:33 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/03/04 15:29:41 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -24,7 +24,8 @@ ft_strchr:
 	pop	rdi
 	test	rcx, rcx
 	jz	endofstr
-	repne scasb
+	repne
+	scasb
 	jnz	endofstr
 	dec	rdi
 success:
