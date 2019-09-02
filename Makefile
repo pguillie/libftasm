@@ -6,27 +6,32 @@
 #    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/09 10:05:42 by pguillie          #+#    #+#              #
-#    Updated: 2019/03/02 18:38:40 by pguillie         ###   ########.fr        #
+#    Updated: 2019/09/02 09:51:26 by pguillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libfts.a
+NAME	:= libfts.a
+AS	:= nasm
+AR	:= ar
 
-AS = nasm
-ASFLAGS = $(ARCH)
+ASFLAGS = -f$(arch)
+ARFLAGS = cr
 
-ifeq ($(shell uname), Linux)
-	ARCH := -felf64
+os != uname
+ifeq ($(os), Linux)
+	arch := elf64
+	ARFLAGS += -U
 else
-	ARCH := -fmacho64 --prefix _
+	arch := macho64
+	ASFLAGS += --prefix _
 endif
 
-INCLUDES = $(addprefix includes/, \
-	ft_ctype.h \
-	libfts.h \
-)
+incdir := ./include/
+srcdir := ./src/
 
-SOURCES := $(addprefix sources/, \
+headers := libfts.h ft_ctype.h
+
+sources := $(addprefix $(srcdir), \
 	$(addprefix ctype/, \
 		ft_ctype.s \
 		ft_isalnum.s \
@@ -60,25 +65,22 @@ SOURCES := $(addprefix sources/, \
 	ft_toupper.s \
 )
 
-OBJECTS = $(SOURCES:%.s=%.o)
+objects = $(sources:%.s=%.o)
 
 .PHONY: all clean fclean re
+.SECONDARY: $(objects)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+$(NAME): $(NAME)($(objects))
+	ranlib $@
 
-$(OBJECTS): $(INCLUDES) Makefile
-
-test:
-	make -C test
+$(objects): $(addprefix $(incdir), $(headers))
 
 clean:
-	rm -rf $(OBJECTS)
+	$(RM) $(objects)
 
 fclean: clean
-	rm -rf $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all

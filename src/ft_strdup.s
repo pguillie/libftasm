@@ -6,12 +6,19 @@
 ;    By: pguillie <pguillie@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2019/02/21 18:48:53 by pguillie          #+#    #+#              ;
-;    Updated: 2019/03/04 15:32:25 by pguillie         ###   ########.fr        ;
+;    Updated: 2019/09/02 08:20:09 by pguillie         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
 global ft_strdup
-extern malloc, ft_strlen, ft_memcpy
+extern malloc
+extern ft_strlen, ft_memcpy
+
+%ifidn __OUTPUT_FORMAT__, elf64
+ %define PIC wrt ..plt
+%else
+ %define PIC
+%endif
 
 section .text
 ft_strdup:
@@ -21,9 +28,9 @@ ft_strdup:
 	call	ft_strlen
 	mov	rdi, rax
 	push	rdi
-	call	malloc
+	call	malloc PIC
 	test	rax, rax
-	jz	return
+	je	return
 	pop	rdx
 	pop	rsi
 	mov	rdi, rax
